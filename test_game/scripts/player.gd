@@ -8,6 +8,14 @@ const JUMP_VELOCITY = -180.0
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var player_name = self.name
 
+func _ready() -> void:
+	if player_name == "P1":
+		animated_sprite.modulate = Color(0.8, 0.6, 1.0)
+	else:
+		animated_sprite.modulate = Color(0.6, 1.0, 0.8)
+	
+	
+
 func _physics_process(delta: float) -> void:
 	
 	# Add the gravity.

@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://co21721i3mbxh"]
+
+[ext_resource type="Script" path="res://scenes/empathy_meter.gd" id="1_tve80"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rvp7u"]
+bg_color = Color(0.335744, 0.597369, 0.984582, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xve01"]
+bg_color = Color(0.920233, 0.442484, 0, 1)
+
+[node name="EmpathyMeter" type="ProgressBar"]
+offset_left = -128.0
+offset_top = -16.0
+offset_right = 128.0
+offset_bottom = 16.0
+theme_override_styles/background = SubResource("StyleBoxFlat_rvp7u")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xve01")
+max_value = 20.0
+value = 10.0
+rounded = true
+show_percentage = false
+script = ExtResource("1_tve80")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = -32.0
+offset_right = 256.0
+text = "Empathy Meter"
+horizontal_alignment = 1
+uppercase = true

@@ -110,8 +110,9 @@ func _on_final_body_exited(body: Node2D) -> void:
 
 var is_p1_in_final_area = false
 var is_p2_in_final_area = false
+var is_bridge_up = false
 
-func build_paltform() -> void:
+func build_bridge() -> void:
 	$FinalPart/FinalPlatform/FP1/AnimationPlayer.play("up")
 	$FinalPart/FinalPlatform/FP2/AnimationPlayer.play("up")
 	$FinalPart/FinalPlatform/FP3/AnimationPlayer.play("up")
@@ -127,8 +128,9 @@ func _on_final_area_body_entered(body: Node2D) -> void:
 	if body == P2:
 		is_p2_in_final_area = true
 		
-	if is_p1_in_final_area && is_p2_in_final_area:
-		build_paltform()
+	if is_p1_in_final_area && is_p2_in_final_area && !is_bridge_up:
+		build_bridge()
+		is_bridge_up = true
 
 
 func _on_final_area_body_exited(body: Node2D) -> void:
