@@ -105,3 +105,37 @@ func _on_final_body_entered(body: Node2D) -> void:
 func _on_final_body_exited(body: Node2D) -> void:
 	if body == P1 || body == P2:
 		final.hide()
+
+###################################################################
+
+var is_p1_in_final_area = false
+var is_p2_in_final_area = false
+
+func build_paltform() -> void:
+	$FinalPart/FinalPlatform/FP1/AnimationPlayer.play("up")
+	$FinalPart/FinalPlatform/FP2/AnimationPlayer.play("up")
+	$FinalPart/FinalPlatform/FP3/AnimationPlayer.play("up")
+	$FinalPart/FinalPlatform/FP4/AnimationPlayer.play("up")
+	$FinalPart/FinalPlatform/FP5/AnimationPlayer.play("up")
+	
+	
+func _on_final_area_body_entered(body: Node2D) -> void:
+	
+	if body == P1:
+		is_p1_in_final_area = true
+		
+	if body == P2:
+		is_p2_in_final_area = true
+		
+	if is_p1_in_final_area && is_p2_in_final_area:
+		build_paltform()
+
+
+func _on_final_area_body_exited(body: Node2D) -> void:
+	
+	if body == P1:
+		is_p1_in_final_area = false
+		
+	if body == P2:
+		is_p2_in_final_area = false
+		
