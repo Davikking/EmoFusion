@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgcl7vmmgsf4"]
+
+[ext_resource type="Texture2D" uid="uid://b34dqbl0sjd83" path="res://Wolfjam2024-main/assets/icon.svg" id="1_yse4w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqk3p"]
+
+[node name="Block" type="StaticBody2D"]
+position = Vector2(196, 108)
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(1.90735e-06, 2.38419e-07)
+scale = Vector2(0.152852, 0.148919)
+texture = ExtResource("1_yse4w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hqk3p")
