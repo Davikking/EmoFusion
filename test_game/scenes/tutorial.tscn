@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://6glc0bex551n"]
+[gd_scene load_steps=8 format=3 uid="uid://6glc0bex551n"]
 
 [ext_resource type="Script" path="res://scenes/tutorial.gd" id="1_lokd5"]
 [ext_resource type="Texture2D" uid="uid://2xc1y6iesx4y" path="res://sprites/world_tileset.png" id="1_tt5i7"]
@@ -178,6 +178,9 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_qfa14")
 pattern_0 = SubResource("TileMapPattern_3pv5g")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_oohxf"]
+radius = 13.1529
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_lokd5")
 
@@ -193,6 +196,41 @@ offset_left = 4.0
 offset_top = 4.0
 offset_right = 76.0
 offset_bottom = 96.0
+
+[node name="P1Welcome" type="Area2D" parent="TutorialPopups"]
+position = Vector2(-4, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TutorialPopups/P1Welcome"]
+position = Vector2(89, 698)
+shape = SubResource("CircleShape2D_oohxf")
+
+[node name="P1Jump" type="Area2D" parent="TutorialPopups"]
+position = Vector2(-4, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TutorialPopups/P1Jump"]
+position = Vector2(185, 697)
+shape = SubResource("CircleShape2D_oohxf")
+
+[node name="P1Sadness" type="Area2D" parent="TutorialPopups"]
+position = Vector2(-4, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TutorialPopups/P1Sadness"]
+position = Vector2(313, 696)
+shape = SubResource("CircleShape2D_oohxf")
+
+[node name="P1Joy" type="Area2D" parent="TutorialPopups"]
+position = Vector2(-4, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TutorialPopups/P1Joy"]
+position = Vector2(553, 696)
+shape = SubResource("CircleShape2D_oohxf")
+
+[node name="P1Final" type="Area2D" parent="TutorialPopups"]
+position = Vector2(-4, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TutorialPopups/P1Final"]
+position = Vector2(793, 696)
+shape = SubResource("CircleShape2D_oohxf")
 
 [node name="UI" type="CanvasLayer" parent="TutorialPopups"]
 
@@ -349,3 +387,17 @@ vertical_alignment = 1
 [node name="P1" parent="." instance=ExtResource("3_xlu02")]
 unique_name_in_owner = true
 position = Vector2(89, 688)
+
+[node name="P2" parent="." instance=ExtResource("3_xlu02")]
+position = Vector2(1833, 690)
+
+[connection signal="body_entered" from="TutorialPopups/P1Welcome" to="." method="_on_p_1_welcome_body_entered"]
+[connection signal="body_exited" from="TutorialPopups/P1Welcome" to="." method="_on_p_1_welcome_body_exited"]
+[connection signal="body_entered" from="TutorialPopups/P1Jump" to="." method="_on_p_1_jump_body_entered"]
+[connection signal="body_exited" from="TutorialPopups/P1Jump" to="." method="_on_p_1_jump_body_exited"]
+[connection signal="body_entered" from="TutorialPopups/P1Sadness" to="." method="_on_p_1_sadness_body_entered"]
+[connection signal="body_exited" from="TutorialPopups/P1Sadness" to="." method="_on_p_1_sadness_body_exited"]
+[connection signal="body_entered" from="TutorialPopups/P1Joy" to="." method="_on_p_1_joy_body_entered"]
+[connection signal="body_exited" from="TutorialPopups/P1Joy" to="." method="_on_p_1_joy_body_exited"]
+[connection signal="body_entered" from="TutorialPopups/P1Final" to="." method="_on_p_1_final_body_entered"]
+[connection signal="body_exited" from="TutorialPopups/P1Final" to="." method="_on_p_1_final_body_exited"]

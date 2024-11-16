@@ -4,20 +4,23 @@ extends CharacterBody2D
 const SPEED = 100.0
 const JUMP_VELOCITY = -180.0
 
+
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var player_name = self.name
 
 func _physics_process(delta: float) -> void:
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("Jump") and is_on_floor():
+	if Input.is_action_just_pressed(player_name+"_jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	# -1 = left, 1 = right
-	var direction := Input.get_axis("move_left", "move_right")
+	var direction := Input.get_axis(player_name+"_move_left", player_name+"_move_right")
 	
 	# Flip the Sprite
 	if direction > 0:
