@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< Updated upstream
 uid="uid://cp462d7w6y1mf"
+=======
+uid="uid://caq6tdhr8ft36"
+>>>>>>> Stashed changes
 path="res://.godot/imported/Brick2.svg-dc0a6aea9c8394a2b63f99dbdbc52108.ctex"
 metadata={
 "vram_texture": false
