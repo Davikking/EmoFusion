@@ -1,56 +1,107 @@
 extends Node2D
 
-@onready var player = %P1
+@onready var P1 = %P1
+@onready var P2 = %P2
+
 @onready var p1welcome = %P1WelcomePanel
 @onready var p1jump = %P1JumpPanel
 @onready var p1sadness = %P1SadnessPanel
 @onready var p1joy = %P1JoyPanel
-@onready var p1final = %P1FinalPanel
+@onready var p2welcome = %P2WelcomePanel
+@onready var p2jump = %P2JumpPanel
+@onready var p2sadness = %P2SadnessPanel
+@onready var p2joy = %P2JoyPanel
+@onready var final = %FinalPanel
 
 func _ready() -> void:
-	# Ensure all panels are hidden initially
-	p1welcome.hide()
+	p1welcome.popup()
 	p1jump.hide()
 	p1sadness.hide()
 	p1joy.hide()
-	p1final.hide()
+	
+	p2welcome.popup()
+	p2jump.hide()
+	p2sadness.hide()
+	p2joy.hide()
+	
+	final.hide()
 
+###################################################################
+
+# P1 Event Handlers
 func _on_p_1_welcome_body_entered(body: Node2D) -> void:
-	if body == player:
-		p1welcome.popup() # Show the welcome panel
+	if body == P1:
+		p1welcome.popup()
 
 func _on_p_1_welcome_body_exited(body: Node2D) -> void:
-	if body == player:
-		p1welcome.hide() # Hide the welcome panel
+	if body == P1:
+		p1welcome.hide()
 
 func _on_p_1_jump_body_entered(body: Node2D) -> void:
-	if body == player:
-		p1jump.popup() # Show the jump panel
+	if body == P1:
+		p1jump.popup()
 
 func _on_p_1_jump_body_exited(body: Node2D) -> void:
-	if body == player:
-		p1jump.hide() # Hide the jump panel
+	if body == P1:
+		p1jump.hide()
 
 func _on_p_1_sadness_body_entered(body: Node2D) -> void:
-	if body == player:
-		p1sadness.popup() # Show the sadness panel
+	if body == P1:
+		p1sadness.popup()
 
 func _on_p_1_sadness_body_exited(body: Node2D) -> void:
-	if body == player:
-		p1sadness.hide() # Hide the sadness panel
+	if body == P1:
+		p1sadness.hide()
 
 func _on_p_1_joy_body_entered(body: Node2D) -> void:
-	if body == player:
-		p1joy.popup() # Show the joy panel
+	if body == P1:
+		p1joy.popup()
 
 func _on_p_1_joy_body_exited(body: Node2D) -> void:
-	if body == player:
-		p1joy.hide() # Hide the joy panel
+	if body == P1:
+		p1joy.hide()
 
-func _on_p_1_final_body_entered(body: Node2D) -> void:
-	if body == player:
-		p1final.popup() # Show the final panel
+###################################################################
 
-func _on_p_1_final_body_exited(body: Node2D) -> void:
-	if body == player:
-		p1final.hide() # Hide the final panel
+# P2 Event Handlers
+func _on_p_2_welcome_body_entered(body: Node2D) -> void:
+	if body == P2:
+		p2welcome.popup()
+
+func _on_p_2_welcome_body_exited(body: Node2D) -> void:
+	if body == P2:
+		p2welcome.hide()
+
+func _on_p_2_jump_body_entered(body: Node2D) -> void:
+	if body == P2:
+		p2jump.popup()
+
+func _on_p_2_jump_body_exited(body: Node2D) -> void:
+	if body == P2:
+		p2jump.hide()
+
+func _on_p_2_sadness_body_entered(body: Node2D) -> void:
+	if body == P2:
+		p2sadness.popup()
+
+func _on_p_2_sadness_body_exited(body: Node2D) -> void:
+	if body == P2:
+		p2sadness.hide()
+
+func _on_p_2_joy_body_entered(body: Node2D) -> void:
+	if body == P2:
+		p2joy.popup()
+
+func _on_p_2_joy_body_exited(body: Node2D) -> void:
+	if body == P2:
+		p2joy.hide()
+
+###################################################################
+
+func _on_final_body_entered(body: Node2D) -> void:
+	if body == P1 || body == P2:
+		final.popup()
+
+func _on_final_body_exited(body: Node2D) -> void:
+	if body == P1 || body == P2:
+		final.hide()
