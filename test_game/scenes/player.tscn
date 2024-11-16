@@ -71,6 +71,10 @@ radius = 6.7082
 position = Vector2(168, 126)
 script = ExtResource("1_pbqxb")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1.52588e-05, 0)
+scale = Vector2(0.12, 0.099)
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(7.7486e-06, -4.76837e-07)
 scale = Vector2(0.12, 0.099)
