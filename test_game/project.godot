@@ -11,14 +11,19 @@ config_version=5
 [application]
 
 config/name="Test_game"
-run/main_scene="res://scene/node_2d.tscn"
+run/main_scene="res://scenes/tutorial.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+TutorialPopups="*res://scenes/tutorial_popups.gd"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/per_pixel_transparency/allowed=true
 
 [input]
 
