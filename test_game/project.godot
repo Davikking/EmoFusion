@@ -15,10 +15,6 @@ run/main_scene="res://scenes/tutorial.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
-[autoload]
-
-TutorialPopups="*res://scenes/tutorial_popups.gd"
-
 [display]
 
 window/size/viewport_width=1920
