@@ -1,4 +1,4 @@
-```markdown
+
 # EmoFusion Game Design Document
 
 ## Overview
@@ -133,4 +133,4 @@ Includes visual assets like:
 
 1. Chang-Arana, A. M., Surma-aho, A., Hölttä-Otto, K., & Sams, M. (2022). *Under the Umbrella: Components of Empathy in Psychology and Design*. Design Science, 8.  
 2. Mental Health America. (2023). *How Do Colors in My Home Change My Mood? Color Psychology Explained*. Mental Health America.
-```
+
