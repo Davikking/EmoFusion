@@ -444,6 +444,7 @@ libraries = {
 }
 
 [node name="TileMap" type="TileMap" parent="."]
+unique_name_in_owner = true
 rotation = 4.4165e-05
 tile_set = SubResource("TileSet_76283")
 format = 2
