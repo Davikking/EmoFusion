@@ -13,6 +13,9 @@ extends Node2D
 @onready var p2joy = %P2JoyPanel
 @onready var final = %FinalPanel
 
+var p1_touching_p2 = false
+
+
 func _ready() -> void:
 	p1welcome.popup()
 	p1jump.hide()
@@ -25,6 +28,7 @@ func _ready() -> void:
 	p2joy.hide()
 	
 	final.hide()
+	
 
 
 func _process(delta: float) -> void:
@@ -146,3 +150,36 @@ func _on_final_area_body_exited(body: Node2D) -> void:
 	if body == P2:
 		is_p2_in_final_area = false
 		
+
+###################################################################
+
+
+var is_p1_in_final_conn = false
+var is_p2_in_final_conn = false
+
+func _on_final_connection_body_entered(body: Node2D) -> void:
+	if body == P1:
+		is_p2_in_final_conn = true
+		
+	if body == P2:
+		is_p2_in_final_conn = true
+		
+	if is_p2_in_final_conn && is_p2_in_final_conn:
+		print("You won!")
+		%EndScreen.visible = true
+		%EndScreen.grab_focus()
+
+
+func _on_final_connection_body_exited(body: Node2D) -> void:
+	if body == P1:
+		is_p2_in_final_conn = false
+		
+	if body == P2:
+		is_p2_in_final_conn = false
+
+
+
+
+func _on_button_pressed() -> void:
+	### NEXT LEVEL
+	pass # Replace with function body.
