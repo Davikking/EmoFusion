@@ -7,7 +7,8 @@ enum Ability {JOY, SADNESS}
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var player_name = self.name
-@onready var player = %P1
+@onready var player1 = %P1
+@onready var player2 = %P2
 @onready var tutorial = preload("res://scenes/tutorial.tscn")
 @onready var tileMap = %TileMap
 var final_direction = 1
@@ -62,8 +63,8 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 	# Handle input for JoyCharacter
-		if Input.is_action_just_pressed("joyAbl"):
-			player.use_ability()
+		if Input.is_action_just_pressed(player_name + "_joyAbl"):
+			use_ability()
 		#if Input.is_action_just_pressed("switch_joy_ability"):
 			#joy_character.switch_ability()
 
@@ -94,18 +95,16 @@ func use_ability():
 	var y_offset = 0
 	var block = block_scene.instantiate()
 	#print(block)
-	print(player.global_position)
-	print(final_direction)
-	
-	block.position.x = (player.global_position.x + (final_direction * x_offset))
-	block.position.y = (player.global_position.y + (final_direction * y_offset))
+	#print(player.global_position)
+	#print(final_direction)
+	block.position.x = (global_position.x + (final_direction * x_offset))
+	block.position.y = (global_position.y + y_offset)
 	block.visible=true
 	#var map = tileMap.instantiate()
 	print(tileMap)
 	tileMap.add_child(block)
 	print(block)
 	
-	#create_block(block.position.x, block.position.y)
 	
 	'''
 	var block_position: Vector2
