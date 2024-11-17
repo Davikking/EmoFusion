@@ -26,6 +26,11 @@ func _ready() -> void:
 	
 	final.hide()
 
+
+func _process(delta: float) -> void:
+	if %Soundtrack.playing == false:
+		%Soundtrack.play()
+		
 ###################################################################
 
 # P1 Event Handlers

@@ -1,6 +1,7 @@
-[gd_scene load_steps=47 format=3 uid="uid://6glc0bex551n"]
+[gd_scene load_steps=48 format=3 uid="uid://6glc0bex551n"]
 
 [ext_resource type="Script" path="res://scenes/tutorial.gd" id="1_lokd5"]
+[ext_resource type="AudioStream" uid="uid://br8pw8wihwacm" path="res://assets/song2.wav" id="2_8al3m"]
 [ext_resource type="Texture2D" uid="uid://cevcj2jbdoq06" path="res://assets/BackgroundBlur.png" id="2_roek7"]
 [ext_resource type="PackedScene" uid="uid://dk55ebtdjnxmd" path="res://scenes/player.tscn" id="3_xlu02"]
 [ext_resource type="PackedScene" uid="uid://dn2n24kt1tcui" path="res://scenes/platform.tscn" id="4_0aire"]
@@ -379,6 +380,11 @@ radius = 13.1529
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_lokd5")
 
+[node name="Soundtrack" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_8al3m")
+volume_db = 20.0
+
 [node name="Background" type="Sprite2D" parent="."]
 self_modulate = Color(1, 1, 1, 0.67451)
 texture = ExtResource("2_roek7")
@@ -676,7 +682,7 @@ vertical_alignment = 1
 unique_name_in_owner = true
 auto_translate_mode = 1
 transparent_bg = true
-position = Vector2i(1481, 500)
+position = Vector2i(1796, 500)
 size = Vector2i(90, 100)
 visible = true
 
@@ -707,7 +713,7 @@ vertical_alignment = 1
 unique_name_in_owner = true
 auto_translate_mode = 1
 transparent_bg = true
-position = Vector2i(1481, 500)
+position = Vector2i(1671, 500)
 size = Vector2i(90, 100)
 visible = true
 
@@ -738,7 +744,7 @@ vertical_alignment = 1
 unique_name_in_owner = true
 auto_translate_mode = 1
 transparent_bg = true
-position = Vector2i(1461, 500)
+position = Vector2i(1511, 500)
 size = Vector2i(110, 100)
 visible = true
 
