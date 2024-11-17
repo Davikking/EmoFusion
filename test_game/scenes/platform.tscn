@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dn2n24kt1tcui"]
 
-[ext_resource type="Texture2D" uid="uid://bofq66ol6s7m7" path="res://assets/world_tileset.png" id="1_hv8tk"]
+[ext_resource type="Texture2D" uid="uid://cvx563t0hwrag" path="res://assets/Platform.png" id="1_whml4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sdfe1"]
 size = Vector2(48, 9)
@@ -8,9 +8,11 @@ size = Vector2(48, 9)
 [node name="Platform" type="AnimatableBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_hv8tk")
+position = Vector2(-5.96046e-08, -3.5)
+scale = Vector2(0.5, 0.375)
+texture = ExtResource("1_whml4")
 region_enabled = true
-region_rect = Rect2(144, 15.7833, 48, 16.2167)
+region_rect = Rect2(0, 0, 96, 24)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3.5)
